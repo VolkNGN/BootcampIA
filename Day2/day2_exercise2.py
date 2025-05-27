@@ -13,17 +13,26 @@ def divide(a, b):
     else:
         return "Division by zero is not allowed"
     
+def factorial(n):
+    if n < 0:
+        return "factorial is not defined for negative numbers"
+    result = 1
+    for i in range(1, int(n) + 1):
+        result *= i
+    return result    
+    
 while True:
     print("\nMenu:")
     print("1. Addition")
     print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
-    print("5. Exit")
+    print("5. Factorial")
+    print("6. Exit")
     
     choice = input("Enter your choice: ")
     
-    if choice == "5":
+    if choice == "6":
         print("Exiting Program.")
         break
     
@@ -38,5 +47,12 @@ while True:
         print("Result: ", multiply(num1, num2))
     elif choice == "4":
         print("Result: ", divide(num1, num2))
+    elif choice == "5":
+        num = float(input("Enter a number for factorial: "))
+        if not num.is_integer():
+            print("Factorial is only defined for integers.")
+        else:
+            print("Result: ", factorial(int(num)))
+
     else:
-        print("Invclid choice. Please try again.")
+        print("Invalid choice. Please try again.")
