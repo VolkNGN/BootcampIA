@@ -1,0 +1,6 @@
+1 | Acheter du lait | incomplet
+2 | Laver la voiture | incomplet
+3 | Nettoyer la cuisine | incomplet
+4 | Appeler Maman | incomplet
+5 | Terminer le rapport | incomplet
+6 | Prendre rendez-vous chez le dentiste | incomplet
