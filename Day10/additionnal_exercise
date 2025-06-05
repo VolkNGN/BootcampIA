@@ -13,4 +13,16 @@ df["taille_m"] = df["taille"] / 100
 df["IMC"] = df["poids"] / (df["taille_m"] ** 2)
 df["etat_imc"] = df["IMC"].apply(lambda imc: "IMC normal" if 18.5 <= imc <= 24.9 else "hors norme")
 
+def imc_categorie(imc):
+    if imc < 18.5:
+        return "Maigreur"
+    elif imc < 25:
+        return "Normal"
+    elif imc < 30:
+        return "Surpoids"
+    else:
+        return "Obésité"
+
+df["categorie_imc"] = df["IMC"].apply(imc_categorie)
+
 print(df)
