@@ -1,0 +1,16 @@
+import pandas as pd
+
+data = {
+    "nom": ["Toto", "Tata", "Titi", "Tutu"],
+    "age": [31, 28, 35, 80],
+    "taille": [170, 157, 180, 147],
+    "poids": [73, 61, 80, 110]
+}
+
+df = pd.DataFrame(data)
+
+df["taille_m"] = df["taille"] / 100
+df["IMC"] = df["poids"] / (df["taille_m"] ** 2)
+df["etat_imc"] = df["IMC"].apply(lambda imc: "IMC normal" if 18.5 <= imc <= 24.9 else "hors norme")
+
+print(df)
